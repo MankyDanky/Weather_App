@@ -1,0 +1,211 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: rgba(255, 255, 255);
+  background-color: #242424;
+  --main-color:rgb(67, 123, 255);
+  --delete-color: rgb(255, 122, 122);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+
+
+.card, .resultCard {
+  background-color: #353535;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+
+.card {
+  text-align: center;
+  max-width: fit-content;
+  padding: 50px;
+  margin: 20px;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+  width: 100vw;
+  padding: 40px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.resultCard {
+  display: flex;
+  margin: 10px;
+  transition-duration: 0.1s;
+  padding: 30px;
+  cursor: pointer;
+  line-height: 20px;
+}
+
+
+.resultCard:hover {
+  margin-left: 2px;
+  margin-right: 2px;
+  background-color: var(--main-color);
+}
+
+.daysContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 350px);
+  justify-content: center;
+  justify-items: center;
+  margin-bottom: 30px;
+}
+
+label {
+  display: block;
+  margin-right: auto;
+  color: rgb(189, 189, 189);
+  
+}
+
+input {
+  margin: 0px auto 20px auto ;
+  padding: 5px;
+  display: block;
+  color: white;
+  width: 100%;
+  background-color: #242424;
+  border: none;
+  border-radius: 5px;
+  min-height: 40px;
+  box-sizing: border-box;
+  outline: none;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+td:first-child {
+  text-align: left;
+  padding-right: 40px;
+}
+td {
+  text-align: right;
+}
+input:focus {
+  border: 2px solid var(--main-color);
+}
+
+button {
+  background-color: var(--main-color);
+  min-width: 150px;
+  min-height: 40px;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition-duration: 0.1s;
+  font-size: 16px;
+}
+
+button:hover:not(.disabled) {
+  box-shadow: 0px 0px 10px var(--main-color);
+  transform: scale(1.1);
+}
+
+.disabled {
+  filter: opacity(0.6);
+  transform: none;
+  box-shadow: none;
+}
+
+button + button {
+  margin-left: 10px;
+}
+
+form {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.errorText {
+  margin: 0;
+  font-size: 18px;
+  color: var(--delete-color);
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+i {
+  font-size: 20px;
+  float: right;
+  margin-left: auto;
+  transition-duration: 0.1s;
+  cursor: pointer;
+}
+
+.redIconButton:hover {
+  text-shadow: 0px 0px 10px var(--delete-color);
+  color: var(--delete-color);
+}
+
+.accentIconButton:hover {
+  text-shadow: 0px 0px 10px var(--main-color);
+  color: var(--main-color);
+}
+
+.loader {
+  width: 60px;
+  padding: 10px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--main-color);
+  --_m: 
+    conic-gradient(#0000 10%,#000),
+    linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+          mask: var(--_m);
+  -webkit-mask-composite: source-out;
+          mask-composite: subtract;
+  animation: l3 1s infinite linear;
+}
+
+.lightBorder {
+  border: 2px solid #353535;
+}
+
+@keyframes l3 {to{transform: rotate(1turn)}}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  button {
+    display: block;
+    width: 100%;
+  }
+  button + button {
+    margin-left: 0px;
+    margin-top: 10px;
+  }
+}
